@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package rock_paper_scissors;
+
+service RockPaperScissors {
+    rpc PlayGame (GameRequest) returns (GameResponse) {}
+}
+
+message GameRequest {
+    int32 player_move = 1;
+}
+
+message GameResponse {
+    int32 ai_move = 1;
+    int32 winner = 2; // 0: AI, 1: Player, 2: Tie
+}
